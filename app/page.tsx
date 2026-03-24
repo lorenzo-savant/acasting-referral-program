@@ -133,7 +133,7 @@ export default function ReferralPage() {
         <div className="relative z-10 max-w-[800px]">
           <AnimatedSection delay={0.1}>
             <h1 className="mb-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight text-white">
-              Bjud in vänner. Få Premium gratis.
+              Bjud in vänner.<br />Få Premium <span className="text-[#c8a2ff]">Gratis</span>
             </h1>
           </AnimatedSection>
 
