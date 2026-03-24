@@ -89,7 +89,7 @@ function RewardCard({ icon, title, description, badge }: { icon: React.ReactNode
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="group relative overflow-hidden rounded-3xl bg-white/[0.03] border border-white/5 transition-all duration-500 hover:bg-white/[0.07] hover:border-white/10 h-full"
+      className="group relative overflow-hidden rounded-3xl bg-white/3 border border-white/5 transition-all duration-500 hover:bg-white/[0.07] hover:border-white/10 h-full"
     >
       <div className="relative z-10 p-8 flex flex-col h-full">
         <div className="flex items-center justify-between mb-6">
@@ -127,10 +127,10 @@ export default function ReferralPage() {
       {/* HERO */}
       <section className="relative min-h-[90vh] sm:min-h-[85vh] flex items-center justify-center text-center px-4 sm:px-6 py-16 sm:py-20 overflow-hidden">
         {/* Gradient orbs */}
-        <div className="absolute top-[-20%] left-[-10%] w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] rounded-full bg-[radial-gradient(circle,rgba(200,162,255,0.09)_0%,transparent_70%)] blur-3xl pointer-events-none" />
-        <div className="absolute bottom-[-30%] right-[-15%] w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] rounded-full bg-[radial-gradient(circle,rgba(232,197,71,0.06)_0%,transparent_70%)] blur-3xl pointer-events-none" />
+        <div className="absolute top-[-20%] left-[-10%] w-100 sm:w-150 h-100 sm:h-150 rounded-full bg-[radial-gradient(circle,rgba(200,162,255,0.09)_0%,transparent_70%)] blur-3xl pointer-events-none" />
+        <div className="absolute bottom-[-30%] right-[-15%] w-75 sm:w-125 h-75 sm:h-125 rounded-full bg-[radial-gradient(circle,rgba(232,197,71,0.06)_0%,transparent_70%)] blur-3xl pointer-events-none" />
 
-        <div className="relative z-10 max-w-[800px]">
+        <div className="relative z-10 max-w-200">
           <AnimatedSection delay={0.1}>
             <h1 className="mb-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight text-white">
               Bjud in vänner.<br />Få Premium <span className="text-[#c8a2ff]">Gratis</span>
@@ -205,8 +205,8 @@ export default function ReferralPage() {
               },
             ].map((step, i) => (
               <AnimatedSection key={i} delay={i * 0.1}>
-                <div className="group relative overflow-hidden rounded-3xl bg-white/[0.03] p-8 border border-white/5 transition-all duration-500 hover:bg-white/[0.07] hover:border-white/10 h-full">
-                  <span className="absolute -right-2 -top-6 text-[140px] font-black leading-none text-white/[0.03] transition-all duration-500 group-hover:text-white/[0.06] select-none">
+                <div className="group relative overflow-hidden rounded-3xl bg-white/3 p-8 border border-white/5 transition-all duration-500 hover:bg-white/[0.07] hover:border-white/10 h-full">
+                  <span className="absolute -right-2 -top-6 text-[140px] font-black leading-none text-white/3 transition-all duration-500 group-hover:text-white/6 select-none">
                     {step.n}
                   </span>
                   
@@ -262,10 +262,10 @@ export default function ReferralPage() {
       </section>
 
       {/* SHARE SECTION */}
-      <section id="share" className="max-w-[800px] mx-auto px-4 sm:px-6 py-24 sm:py-32">
+      <section id="share" className="max-w-200 mx-auto px-4 sm:px-6 py-24 sm:py-32">
         <AnimatedSection>
           <div className="bg-bg-card border border-border rounded-2xl p-6 sm:p-8 md:p-12 text-center relative overflow-hidden">
-            <div className="absolute top-[-100px] left-1/2 -translate-x-1/2 w-[400px] h-[300px] bg-[radial-gradient(circle,rgba(200,162,255,0.09)_0%,transparent_70%)] pointer-events-none" />
+            <div className="absolute -top-25 left-1/2 -translate-x-1/2 w-100 h-75 bg-[radial-gradient(circle,rgba(200,162,255,0.09)_0%,transparent_70%)] pointer-events-none" />
 
             <div className="relative z-10">
               <span className="text-4xl sm:text-5xl block mb-4">🔗</span>
@@ -274,7 +274,7 @@ export default function ReferralPage() {
                 Kopiera och dela med vänner – de får Premium-bonus och du också.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-3 items-center justify-center p-3 sm:p-4 bg-bg border border-border rounded-xl max-w-[500px] mx-auto">
+              <div className="flex flex-col sm:flex-row gap-3 items-center justify-center p-3 sm:p-4 bg-bg border border-border rounded-xl max-w-125 mx-auto">
                 <code className="text-xs sm:text-sm text-white/80 break-all flex-1 text-center sm:text-left font-mono">
                   {referralLink}
                 </code>
@@ -286,7 +286,7 @@ export default function ReferralPage() {
       </section>
 
       {/* INVITE BY EMAIL */}
-      <section className="max-w-[800px] mx-auto px-4 sm:px-6 py-16 sm:py-20">
+      <section className="max-w-200 mx-auto px-4 sm:px-6 py-16 sm:py-20">
         <AnimatedSection>
           <div className="bg-bg-card border border-border rounded-2xl p-6 sm:p-8 md:p-10">
             <h3 className="text-lg sm:text-xl font-bold mb-2">Bjud in via e-post</h3>
@@ -300,7 +300,7 @@ export default function ReferralPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="namn@exempel.se"
-                className="flex-1 min-w-[200px] px-4 py-3 rounded-lg border border-border-accent bg-bg text-white text-base outline-none transition-colors focus:border-accent"
+                className="flex-1 min-w-50 px-4 py-3 rounded-lg border border-border-accent bg-bg text-white text-base outline-none transition-colors focus:border-accent"
               />
               <button
                 onClick={handleSubmit}
@@ -315,7 +315,7 @@ export default function ReferralPage() {
       </section>
 
       {/* FAQ - Modern Accordion */}
-      <section className="border-t border-white/5 bg-[#0a0a0a] py-16 sm:py-20 px-4 sm:px-6">
+      <section className="border-t border-white/5 bg-bg py-16 sm:py-20 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <AnimatedSection>
@@ -327,7 +327,7 @@ export default function ReferralPage() {
 
             <AnimatedSection delay={0.1}>
               <div className="space-y-3">
-                <details className="group rounded-2xl bg-white/[0.03] border border-white/5 transition-all duration-300">
+                <details className="group rounded-2xl bg-white/3 border border-white/5 transition-all duration-300">
                   <summary className="flex cursor-pointer items-center justify-between p-6 list-none">
                     <span className="text-lg font-medium text-white">Hur hittar jag min referral-länk?</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white/40 transition-transform duration-300 group-open:rotate-180"><path d="m6 9 6 6 6-6"></path></svg>
@@ -337,7 +337,7 @@ export default function ReferralPage() {
                   </div>
                 </details>
 
-                <details className="group rounded-2xl bg-white/[0.03] border border-white/5 transition-all duration-300">
+                <details className="group rounded-2xl bg-white/3 border border-white/5 transition-all duration-300">
                   <summary className="flex cursor-pointer items-center justify-between p-6 list-none">
                     <span className="text-lg font-medium text-white">Finns det ett tak på belöningarna?</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white/40 transition-transform duration-300 group-open:rotate-180"><path d="m6 9 6 6 6-6"></path></svg>
@@ -347,7 +347,7 @@ export default function ReferralPage() {
                   </div>
                 </details>
 
-                <details className="group rounded-2xl bg-white/[0.03] border border-white/5 transition-all duration-300">
+                <details className="group rounded-2xl bg-white/3 border border-white/5 transition-all duration-300">
                   <summary className="flex cursor-pointer items-center justify-between p-6 list-none">
                     <span className="text-lg font-medium text-white">Vad får min vän?</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white/40 transition-transform duration-300 group-open:rotate-180"><path d="m6 9 6 6 6-6"></path></svg>
@@ -357,7 +357,7 @@ export default function ReferralPage() {
                   </div>
                 </details>
 
-                <details className="group rounded-2xl bg-white/[0.03] border border-white/5 transition-all duration-300">
+                <details className="group rounded-2xl bg-white/3 border border-white/5 transition-all duration-300">
                   <summary className="flex cursor-pointer items-center justify-between p-6 list-none">
                     <span className="text-lg font-medium text-white">Hur lång tid tar det innan jag får min Premium?</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white/40 transition-transform duration-300 group-open:rotate-180"><path d="m6 9 6 6 6-6"></path></svg>
@@ -367,7 +367,7 @@ export default function ReferralPage() {
                   </div>
                 </details>
 
-                <details className="group rounded-2xl bg-white/[0.03] border border-white/5 transition-all duration-300">
+                <details className="group rounded-2xl bg-white/3 border border-white/5 transition-all duration-300">
                   <summary className="flex cursor-pointer items-center justify-between p-6 list-none">
                     <span className="text-lg font-medium text-white">Kan jag dela min länk på sociala medier?</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white/40 transition-transform duration-300 group-open:rotate-180"><path d="m6 9 6 6 6-6"></path></svg>
@@ -384,7 +384,7 @@ export default function ReferralPage() {
 
       {/* CTA FOOTER */}
       <section className="py-16 sm:py-20 text-center border-t border-border relative overflow-hidden px-4 sm:px-6">
-        <div className="absolute bottom-[-50%] left-1/2 -translate-x-1/2 w-[500px] sm:w-[700px] h-[400px] sm:h-[500px] bg-[radial-gradient(circle,rgba(200,162,255,0.08)_0%,transparent_70%)] pointer-events-none" />
+        <div className="absolute bottom-[-50%] left-1/2 -translate-x-1/2 w-125 sm:w-175 h-100 sm:h-125 bg-[radial-gradient(circle,rgba(200,162,255,0.08)_0%,transparent_70%)] pointer-events-none" />
 
         <AnimatedSection>
           <div className="relative z-10">
